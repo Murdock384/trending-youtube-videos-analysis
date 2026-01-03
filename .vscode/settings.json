@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "YouTube Trends Database",
+      "database": "c:\\Users\\David Abraham\\Desktop\\Masters Studies\\Python-and-SQL\\final-project\\trending-youtube-videos-analysis\\database\\youtube_trends.db"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}
