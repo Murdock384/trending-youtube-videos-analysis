@@ -31,7 +31,7 @@ This project analyzes trending YouTube videos to understand:
 
 ## Live Demo
 
-**Streamlit Cloud:** [https://trending-youtube-videos-analysis.streamlit.app/] _(Update after deployment)_
+**Streamlit Cloud:**: https://trending-youtube-videos-analysis.streamlit.app
 
 ## Local Setup
 
