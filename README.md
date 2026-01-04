@@ -19,8 +19,6 @@ The analysis combines data from 100,000+ trending videos to uncover actionable i
 
 The dashboard features interactive Plotly visualizations with dynamic country and category filtering, allowing users to explore cross-country performance comparisons, channel rankings, publishing time heatmaps, correlation matrices, and days-to-trending distributions. The project demonstrates data cleaning workflows, feature engineering techniques, SQLite database design with optimized indexes, and leveraging Streamlit to make a functinonal web app.
 
-**Live Demo:** https://trending-youtube-videos-analysis.streamlit.app
-
 ## Dataset
 
 **Original dataset link:**  
