@@ -1,0 +1,6 @@
+# This file keeps the cleaned_data/ folder in version control
+# This folder will be populated when you run: src/data-handling-and-visualization.ipynb
+# Generated files:
+# - cleaned_videos.csv
+# - categories.csv
+# - channel_stats.csv
