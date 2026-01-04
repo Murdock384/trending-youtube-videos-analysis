@@ -1,52 +1,47 @@
-# YouTube Trending Videos Analysis Dashboard
+# Final Project – README
 
-An interactive Streamlit dashboard analyzing YouTube trending videos across the United States, Canada, and Great Britain to identify key success factors and patterns.
+**Student: David Abraham**
+Student ID: 487868
 
-## Research Question
+## Project Description
 
-**What patterns and factors determine a video's success on YouTube?**
+This project analyzes YouTube trending videos across the United States, Canada, and Great Britain to identify key success factors and patterns that determine a video's success on YouTube.
 
-This project analyzes trending YouTube videos to understand:
+The interactive Streamlit dashboard provides comprehensive insights into:
 
-- Engagement metrics and patterns
-- Optimal publishing strategies
-- Category performance differences
-- Factors correlating with video success
+- **Engagement metrics and patterns**: How viewers interact with trending content through likes, comments, and dislikes
+- **Optimal publishing strategies**: Best times and days to publish videos for maximum trending potential
+- **Category performance differences**: Which video categories dominate the trending page and achieve the highest engagement
+- **Correlation analysis**: Relationships between views, engagement rate, title length, tag counts, and virality
+- **Performance classification**: Videos are categorized as Explosive (top 10% views + fastest 25% trending), High-Performing (top 25% views OR fast trending), or Standard Trending based on reach and speed-to-trending
 
-## Features
+The analysis combines data from 100,000+ trending videos to uncover actionable insights. Key findings include: Music videos achieve the highest average views but lowest engagement rates (passive consumption); explosive viral growth requires both massive reach AND rapid trending speed within 4 days median; early morning publishing (5 AM UTC) correlates with higher views; and engagement rate shows negative correlation with view counts, indicating that viral videos often have lower interaction rates due to passive viewing behaviors.
 
-- **Interactive Visualizations**: 11 Plotly charts with zoom, pan, and hover capabilities
-- **Dynamic Filtering**: Filter by country and category to explore specific markets
-- **Comprehensive Analysis**:
-  - Cross-country performance comparison
-  - Category performance rankings
-  - Correlation analysis of key metrics
-  - Publishing time optimization
-  - Engagement patterns
-  - Channel rankings
-  - Days-to-trending analysis
-  - Title length impact
-  - Tag count effectiveness
-- **Key Findings**: 7 data-driven insights with expandable sections
+The dashboard features interactive Plotly visualizations with dynamic country and category filtering, allowing users to explore cross-country performance comparisons, channel rankings, publishing time heatmaps, correlation matrices, and days-to-trending distributions. The project demonstrates data cleaning workflows, feature engineering techniques, SQLite database design with optimized indexes, and leveraging Streamlit to make a functinonal web app.
 
-## Live Demo
+**Live Demo:** https://trending-youtube-videos-analysis.streamlit.app
 
-**Streamlit Cloud:**: https://trending-youtube-videos-analysis.streamlit.app
+## Dataset
 
-## Local Setup
+**Original dataset link:**  
+https://www.kaggle.com/datasets/datasnaek/youtube-new  
+(Access: anyone with the link can view/download)
 
-### Prerequisites
+**Dataset Description:**  
+The YouTube Trending Video Dataset contains daily records of trending videos across 10 countries. This project uses data from three Western English-speaking countries (United States, Canada, Great Britain) to ensure consistent analysis across similar markets.
 
-- Python 3.8 or higher
-- pip package manager
+**Note:**  
+Dataset file names are kept exactly as in the original download.
 
-### Installation
+## How to Run
 
-1. **Clone the repository:**
+1. **Extract the project and create a virtual environment:**
 
    ```bash
-   git clone <your-repo-url>
    cd trending-youtube-videos-analysis
+   python -m venv venv
+   venv\Scripts\activate  # On Windows
+   # source venv/bin/activate  # On macOS/Linux
    ```
 
 2. **Install dependencies:**
@@ -55,67 +50,37 @@ This project analyzes trending YouTube videos to understand:
    pip install -r requirements.txt
    ```
 
-3. **Run the dashboard:**
+3. **Download the dataset from Kaggle:**
 
+   - Visit: https://www.kaggle.com/datasets/datasnaek/youtube-new
+   - Click "Download"
+   - Extract the downloaded zip file
+   - Place the following 6 files in the `dataset/` folder in the project root where you should see files named like `USvideos.csv`, `US_category_id.json` and 10 different countries in total.
+
+4. **Run the Jupyter notebook to process and clean the data:**
+
+   The `data-handling-and-visualization.ipynb` stored under the `src` folder contains all logic to clean data, data handling and perform EDA.
+   
+
+   - Execute all cells in the notebook
+   - This will create the `cleaned_data/` folder with 3 CSV files:
+     - `cleaned_videos.csv` (~107,000 video records)
+     - `categories.csv` (18 categories)
+     - `channel_stats.csv` (aggregated channel statistics)
+
+5. **Create the SQLite database:**
+   To setup the database run the following command
+
+   ```bash
+   python database/create_database.py
+   ```
+
+   - This creates `database/youtube_trends.db` from the cleaned CSV files
+   - Expected output: Database with 3 tables and 9 indexes
+
+6. **Run the Streamlit dashboard:**
    ```bash
    streamlit run src/app.py
    ```
-
-4. **Open your browser:**
-   The app will automatically open at `http://localhost:8501`
-
-## Project Structure
-
-```
-trending-youtube-videos-analysis/
-├── src/
-│   ├── app.py                              # Main Streamlit application
-│   ├── db_utils.py                         # Database query utilities
-│   └── data-handling-and-visualization.ipynb  # Jupyter analysis notebook
-├── database/
-│   ├── youtube_trends.db                   # SQLite database
-│   └── create_database.py                  # Database creation script
-├── dataset/                                # Raw CSV and JSON files
-├── cleaned_data/                           # Processed CSV files
-├── requirements.txt                        # Python dependencies
-└── README.md                               # This file
-```
-
-## Database Schema
-
-**SQLite Database:** `database/youtube_trends.db`
-
-### Tables
-
-1. **categories** - Category ID to name mapping
-2. **channel_stats** - Aggregated channel-level statistics
-3. **videos** - Main fact table with 29 columns including:
-   - Video metadata (id, title, channel, category, country)
-   - Engagement metrics (views, likes, dislikes, comments)
-   - Derived features (engagement_rate, like_ratio, days_to_trending)
-   - Time dimensions (publish_hour, publish_day_of_week, publish_month)
-   - Performance classification (Explosive, High-Performing, Standard Trending)
-
-
-## Data Source
-
-- **YouTube Trending Dataset** (Kaggle)
-- **Countries:** United States, Canada, Great Britain
-- **Categories:** 18 unique categories
-- **Time Period:** Historical trending data
-- **Total Videos:** 100,000+ trending videos analyzed
-
-## Analysis Workflow
-
-1. **Data Collection** - Raw CSV files from Kaggle
-2. **Data Cleaning** - Handle missing values, duplicates, type conversions
-3. **Feature Engineering** - Calculate engagement metrics, time features, performance classes
-4. **Database Creation** - Load into SQLite with indexes
-5. **Exploratory Analysis** - Jupyter notebook analysis
-6. **Dashboard Development** - Interactive Streamlit app
-7. **Deployment** - Streamlit Cloud hosting
-
-
-## License
-
-This project is for educational purposes. Dataset sourced from publicly available YouTube trending data.
+   - The app will automatically open in your browser at `http://localhost:8501`
+   - If not, manually navigate to the URL shown in the terminal

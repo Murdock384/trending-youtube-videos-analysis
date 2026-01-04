@@ -58,7 +58,6 @@ def show():
     st.markdown("###  1. Analysis Page")
     st.info("""
     **What you'll find:**
-    - **12 Interactive Sections** with detailed visualizations
     - **Cross-Country Performance Analysis** comparing US, CA, and GB
     - **Category Performance Insights** across different video types
     - **Correlation Analysis** between engagement metrics
@@ -77,7 +76,6 @@ def show():
     - **Categories Table** - mapping of video category IDs to names
     - **Channel Stats Table** - aggregated statistics for top channels
     - **Videos Table** - detailed information on all trending videos
-    - **Interactive Filters** to explore data by country and metrics
     - **Table Schemas** showing database structure
     
     **Best for:** Exploring raw data and performing custom analysis
