@@ -52,7 +52,7 @@ Dataset file names are kept exactly as in the original download.
    - Visit: https://www.kaggle.com/datasets/datasnaek/youtube-new
    - Click "Download"
    - Extract the downloaded zip file
-   - Place the following 6 files in the `dataset/` folder in the project root where you should see files named like `USvideos.csv`, `US_category_id.json` and 10 different countries in total.
+   - Place the extracted files in the `dataset/` folder in the project root where you should see files named like `USvideos.csv`, `US_category_id.json` and 10 different countries in total.
 
 4. **Run the Jupyter notebook to process and clean the data:**
 
