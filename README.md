@@ -22,8 +22,7 @@ The dashboard features interactive Plotly visualizations with dynamic country an
 ## Dataset
 
 **Original dataset link:**  
-https://www.kaggle.com/datasets/datasnaek/youtube-new  
-(Access: anyone with the link can view/download)
+https://www.kaggle.com/datasets/datasnaek/youtube-new
 
 **Dataset Description:**  
 The YouTube Trending Video Dataset contains daily records of trending videos across 10 countries. This project uses data from three Western English-speaking countries (United States, Canada, Great Britain) to ensure consistent analysis across similar markets.
