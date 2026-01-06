@@ -43,7 +43,7 @@ https://code.visualstudio.com/docs/datascience/jupyter-notebooks
 1. **Extract the project and create a virtual environment:**
 
    ```bash
-   cd trending-youtube-videos-analysis
+   cd trending-youtube-videos-analysis-main
    python -m venv venv
    venv\Scripts\activate  # On Windows
    # source venv/bin/activate  # On macOS/Linux
