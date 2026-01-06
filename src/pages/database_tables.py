@@ -2,14 +2,13 @@ import streamlit as st
 import sys
 from pathlib import Path
 
-# Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from database import db_utils as db
 
 def show():
     """Display the Database Tables page with all SQL tables."""
     
-    # Add custom CSS for selectbox styling
+    # Adding custom CSS for selectbox styling
     st.markdown("""
         <style>
         /* Style selectbox to be shorter and have black background */

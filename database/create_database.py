@@ -210,7 +210,6 @@ def create_database():
     # Sample queries to validate
     print("\nSample Validation Queries:")
     
-    # Query 1: Videos by country
     print("\n   1. Videos by Country:")
     cursor.execute("""
         SELECT country, COUNT(*) as count 
@@ -221,7 +220,6 @@ def create_database():
     for row in cursor.fetchall():
         print(f"      {row[0]}: {row[1]:,} videos")
     
-    # Query 2: Top 5 categories
     print("\n   2. Top 5 Categories by Video Count:")
     cursor.execute("""
         SELECT c.category_name, COUNT(*) as count
@@ -234,7 +232,6 @@ def create_database():
     for row in cursor.fetchall():
         print(f"      {row[0]}: {row[1]:,} videos")
     
-    # Query 3: Performance class distribution
     print("\n   3. Performance Class Distribution:")
     cursor.execute("""
         SELECT performance_class, COUNT(*) as count
@@ -245,7 +242,6 @@ def create_database():
     for row in cursor.fetchall():
         print(f"      {row[0]}: {row[1]:,} videos")
     
-    # Query 4: Date range
     print("\n   4. Data Date Range:")
     cursor.execute("""
         SELECT 

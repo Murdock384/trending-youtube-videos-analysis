@@ -94,7 +94,7 @@ def show():
     
     The data was cleaned and processed to ensure quality and consistency, removing duplicates, handling 
     missing values, and creating derived metrics such as engagement rates and days to trending. The final 
-    dataset includes over **40,000 trending videos** across **15+ video categories** including Entertainment, 
+    dataset includes over **100,000 trending videos** across **15+ video categories** including Entertainment, 
     Music, News, Gaming, Sports, and more.
     """)
     
