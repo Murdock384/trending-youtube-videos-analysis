@@ -43,7 +43,7 @@ https://code.visualstudio.com/docs/datascience/jupyter-notebooks
 1. **Extract the project and create a virtual environment:**
 
    ```bash
-   cd trending-youtube-videos-analysis-main
+   cd trending-youtube-videos-analysis-main # If you are not already inside the trending-youtube-videos-analysis-main directory on the terminal.
    python -m venv venv
    venv\Scripts\activate  # On Windows
    # source venv/bin/activate  # On macOS/Linux
@@ -70,7 +70,7 @@ https://code.visualstudio.com/docs/datascience/jupyter-notebooks
 
    - Open `src/data-handling-and-visualization.ipynb` in VS Code
    - Select the kernel: Click the kernel picker in the top-right corner and choose **"Python (trending-youtube-venv)"** which should be available under the Jupyter Kernels section.
-   If this is not visible please try restarting the IDE
+   If this is not visible please try restarting the IDE and remember to reactivate the virtual environment before any terminal commands.
 
    - Execute all cells in the notebook (Run All or cell-by-cell)
    - This will create the `cleaned_data/` folder with 3 CSV files:
