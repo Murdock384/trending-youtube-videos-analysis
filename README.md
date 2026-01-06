@@ -69,7 +69,7 @@ https://code.visualstudio.com/docs/datascience/jupyter-notebooks
 4. **Run the Jupyter notebook to process and clean the data:**
 
    - Open `src/data-handling-and-visualization.ipynb` in VS Code
-   - Select the kernel: Click the kernel picker in the top-right corner and choose **"Python (trending-youtube-venv)"**
+   - Select the kernel: Click the kernel picker in the top-right corner and choose **"Python (trending-youtube-venv)"** which should be available under the Jupyter Kernels section.
    If this is not visible please try restarting the IDE
 
    - Execute all cells in the notebook (Run All or cell-by-cell)
