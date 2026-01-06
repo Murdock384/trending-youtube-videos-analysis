@@ -30,6 +30,11 @@ The YouTube Trending Video Dataset contains daily records of trending videos acr
 **Note:**  
 Dataset file names are kept exactly as in the original download.
 
+## Requirements
+
+- Python 3.10 or higher (developed on Python 3.13)
+- pip (Python package installer)
+
 ## How to Run
 
 1. **Extract the project and create a virtual environment:**

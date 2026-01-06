@@ -138,7 +138,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Navigation section
+# Sidebar Navigation
 pg = st.navigation([
     st.Page("pages/home.py", title="Home", default=True),
     st.Page("pages/analysis.py", title=" Analysis"),

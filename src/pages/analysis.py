@@ -101,7 +101,7 @@ def show():
     country_stats = db.get_country_stats(countries_filter)
 
     if not country_stats.empty:
-        # Create 1x3 subplot grid
+
         fig = make_subplots(
             rows=1, cols=3,
             subplot_titles=(
@@ -374,7 +374,7 @@ def show():
             
             **Optimal Publishing Time:**
             - **{day_labels[best_day]}** at **{best_hour}:00 AM UTC** with average views of **{best_views:,}**
-            - Sunday **4:00 AM UTC** is a worth alternative with very high average views indicating that videos published over 
+            - Sunday **4:00 AM UTC** is a worthy alternative with very high average views indicating that videos published over 
               the weekend have higher potential to trend and reach larger audiences.
         
             
@@ -432,20 +432,20 @@ def show():
             Here the objective was to categorize these trending videos into three distinct performance tiers based on their views and how quickly they rose to 
             popularity.
                         
-            🔴 **Explosive Trending Videos** (Red)
+            **Explosive Trending Videos** (Red)
             - Top 10% views AND in the Top 25% days to trending
             - True viral breakout hits
             - Massive reach achieved QUICKLY
             
-            🟠 **High-Performing Trending Videos** (Orange)
+            **High-Performing Trending Videos** (Orange)
             - Top 25% views OR top 50% speed
             - Excel in at least one dimension
             
-            🔵 **Standard Trending Videos** (Blue)
+            **Standard Trending Videos** (Blue)
             - Typical trending performance
             
             **The Paradox:**
-            No strong correlation between views and engagement rate - many high-view videos have low engagement.
+            No strong correlation between views and engagement rate - many high-view videos have low engagement which is consistent with correlation matrix.
             
             </div>
             """, unsafe_allow_html=True)
@@ -671,7 +671,7 @@ def show():
                 title_data,
                 x='title_category',
                 y='avg_views',
-                title='Average Views by Title Length in Number of Words',
+                title='Average Views by Title Length in Number of Characters',
                 labels={
                     'title_category': 'Title Length Category',
                     'avg_views': 'Average Views'
@@ -811,21 +811,16 @@ def show():
         **What This Means:**
         - Music content has inherent viral potential due to shareability and repeat viewing
         - The category benefits from embedded plays, social sharing, and playlist inclusion
-        - However, high view counts don't always translate to proportional engagement (see Finding 2)
-        
-        **Implication:** Music is the most reliable category for view count, but may not generate the highest interaction rates.
         """)
 
     # Finding 2
-    with st.expander("**2. High Views Don't Guarantee High Engagement**"):
+    with st.expander("**2. High Views Don't Guarantee High Engagement Rate**"):
         st.markdown("""
         **Finding:** Engagement rate shows a **negative correlation (-0.08)** with views.
         
         **What This Means:**
         - Videos with massive view counts often have **lower engagement rates**
-        - This suggests passive consumption (background music, autoplay) inflates views
-                    
-        **Implication:** Don't chase views alone - videos with 1M engaged viewers outperform 10M passive viewers.
+        - Creator needs to additionally put effort to drive likes/comments/shares.
         """)
 
     # Finding 3
@@ -842,11 +837,11 @@ def show():
         """)
 
     # Finding 4
-    with st.expander("**4. Early Morning Publishing Shows Highest Average Views**"):
+    with st.expander("**4. Early Morning Weekend Publishing Shows Highest Average Views**"):
         st.markdown("""
-        **Finding:** Videos published at **5:00 AM** (UTC timezone) show highest average views.
+        **Finding:** Videos published at around **5:00 AM** (UTC timezone) on weekends show highest average views.
         
-        **Strategy:** Schedule uploads for early morning UTC to maximize initial visibility and day-long accumulation.
+        **Strategy:** Schedule uploads for early morning UTC on weekends to maximize initial visibility.
         """)
 
     # Finding 5
@@ -864,16 +859,21 @@ def show():
         """)
 
     # Finding 6
-    with st.expander("**6. Tags Show Minimal Impact on Performance**"):
+    with st.expander("**6. Title Length and Tags Impact on Performance**"):
         st.markdown("""
-        **Finding:** Tag count has **weak negative correlation (-0.025)** with views.
+        **Finding:** Short to medium titles (up to 60 characters) perform better, and tag count does not correspond to views.
         
         **What This Means:**
-        - More tags ≠ better performance
-        - Over-tagging may signal spam to YouTube's algorithm
-        - Tag quality matters far more than quantity
-        - 15-30 relevant tags appears optimal (from visualization analysis)
+        - **Title Length:** Videos with titles under 60 characters achieve higher median and average views
+          - Short (<30 chars) and Medium (30-60 chars) titles are more digestible and click-friendly
+          - Long titles (60+ chars) may get truncated in search results and recommendations
+          - Concise, punchy titles outperform verbose descriptions
+          
+        - **Tag Quality Over Quantity:** More tags ≠ better performance
+          - 6-8 relevant, specific tags appears optimal (from visualization analysis)
+          - Tag accuracy and relevance matter far more than exhaustive lists
         
+        **Strategy:** Craft concise, compelling titles (aim for 30-60 characters) and focus on specific, accurate tags rather than exhaustive lists. Neither factor drives discovery alone.
         """)
 
     # Finding 7
@@ -888,5 +888,5 @@ def show():
         """)
 
 
-# Call the show function to display the page
+# Calling the show function to display the page
 show()

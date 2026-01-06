@@ -164,5 +164,5 @@ def show():
         """, language="sql")
 
 
-# Call the show function to display the page
+# Calling the show function to display the page
 show()

@@ -13,6 +13,7 @@ Tables:
 import sqlite3
 import pandas as pd
 import os
+
 from pathlib import Path
 
 # Define paths
@@ -115,7 +116,7 @@ def create_database():
     print("STEP 2: Loading Data from CSV Files")
     print("="*80)
     
-    # LOAD DATA: Categories
+
     print("\nLoading categories...")
     categories_df = pd.read_csv(CLEANED_DATA_DIR / 'categories.csv')
     # Remove duplicates (same category may appear for different countries)
@@ -123,15 +124,13 @@ def create_database():
     categories_df.to_sql('categories', conn, if_exists='append', index=False)
     print(f"   Loaded {len(categories_df)} unique categories")
     
-    # LOAD DATA: Channel Stats
+ 
     print("\nLoading channel statistics...")
     channel_stats_df = pd.read_csv(CLEANED_DATA_DIR / 'channel_stats.csv')
-    # Remove duplicates just in case
     channel_stats_df = channel_stats_df.drop_duplicates(subset=['channel_title'])
     channel_stats_df.to_sql('channel_stats', conn, if_exists='append', index=False)
     print(f"   Loaded {len(channel_stats_df):,} unique channels")
     
-    # LOAD DATA: Videos (in chunks for large file)
     print("\nLoading video data (this may take a minute)...")
     chunk_size = 10000
     total_rows = 0

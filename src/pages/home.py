@@ -3,7 +3,7 @@ import streamlit as st
 def show():
     """Display the Home page with overview and navigation guide."""
     
-    # Add custom CSS for styling
+    # Adding custom CSS for styling
     st.markdown("""
         <style>
         /* Style info boxes with black background */
@@ -52,7 +52,7 @@ def show():
     
     st.markdown("---")
     
-    # Navigation Guide
+    # Page Guide
     st.markdown("## Page Guide")
     
     st.markdown("###  1. Analysis Page")
@@ -110,5 +110,5 @@ def show():
     - Use filters on each page to customize your view
     """)
     
-# Call the show function to display the page
+# Calling the show function to display the page
 show()
