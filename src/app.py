@@ -1,6 +1,7 @@
 """
 This script sets up the Streamlit application for YouTube Trending Videos Analysis.
 """
+# Link to Kaggle Dataset for download: https://www.kaggle.com/datasets/datasnaek/youtube-new
 
 import streamlit as st
 
