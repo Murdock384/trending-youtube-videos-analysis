@@ -32,8 +32,11 @@ Dataset file names are kept exactly as in the original download.
 
 ## Requirements
 
-- Python 3.10 or higher (developed on Python 3.13)
+- Python Python 3.13
 - pip (Python package installer)
+- IDE with jupyter notebook support like VSCode.
+If you are using VSCode have not installed the jupyter extension please follow the pop up or 
+https://code.visualstudio.com/docs/datascience/jupyter-notebooks
 
 ## How to Run
 
@@ -46,11 +49,15 @@ Dataset file names are kept exactly as in the original download.
    # source venv/bin/activate  # On macOS/Linux
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies inside the virtual environment:**
 
    ```bash
    pip install -r requirements.txt
+   pip install ipykernel
+   python -m ipykernel install --user --name=trending-youtube-venv --display-name "Python (trending-youtube-venv)"
    ```
+
+   **Note:** The `ipykernel` commands make your virtual environment available as a kernel in VS Code's Jupyter notebook interface.
 
 3. **Download the dataset from Kaggle:**
 
@@ -61,10 +68,11 @@ Dataset file names are kept exactly as in the original download.
 
 4. **Run the Jupyter notebook to process and clean the data:**
 
-   The `data-handling-and-visualization.ipynb` stored under the `src` folder contains all logic to clean data, data handling and perform EDA.
-   
+   - Open `src/data-handling-and-visualization.ipynb` in VS Code
+   - Select the kernel: Click the kernel picker in the top-right corner and choose **"Python (trending-youtube-venv)"**
+   If this is not visible please try restarting the IDE
 
-   - Execute all cells in the notebook
+   - Execute all cells in the notebook (Run All or cell-by-cell)
    - This will create the `cleaned_data/` folder with 3 CSV files:
      - `cleaned_videos.csv` (~107,000 video records)
      - `categories.csv` (18 categories)
